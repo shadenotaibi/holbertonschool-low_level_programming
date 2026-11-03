@@ -12,13 +12,12 @@ int main(void)
 
 	while (l <= 'z')
 	{
-		if (l != 'q' || l != 'r')
+		if (l != 'q' && l != 'r')
 		{
 			putchar(l);
-			l++;
 		}
+		l++;
 	}
 	putchar('\n');
 	return (0);
 }
-EOF
