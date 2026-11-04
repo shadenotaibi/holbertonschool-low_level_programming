@@ -12,11 +12,7 @@
     while (l<= 'z')
     {
         _putchar(l);
-        _putchar('\n');
+        l++;
     }
- }
- int main(void)
- {
-    print_alphabet();
-    return (0);
+    _putchar('\n');
  }
