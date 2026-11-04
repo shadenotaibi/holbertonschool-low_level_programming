@@ -1,41 +1,57 @@
 #include "main.h"
 
 /**
- * print_to_98 - prints all natural numbers from n to 98
+ * print_to_98 - prints all integers from n to 98
  * @n: the number to start from
+ *
+ * Return: void
  */
 void print_to_98(int n)
 {
-	if (n < 98)
+	int num;
+	int divisor;
+	int step;
+
+	if (n <= 98)
 	{
-		while (n < 98)
-		{
-			if (n >= 10)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-			}
-			else
-			{
-				_putchar(n + '0');
-			}
-			_putchar(',');
-			_putchar(' ');
-			n++;
-		}
+		step = 1;
 	}
 	else
 	{
-		while (n > 98)
-		{
-			_putchar((n / 10) + '0');
-			_putchar((n % 10) + '0');
-			_putchar(',');
-			_putchar(' ');
-			n--;
-		}
+		step = -1;
 	}
-	_putchar('9');
-	_putchar('8');
+
+	while (1)
+	{
+		num = n;
+
+		if (num < 0)
+		{
+			_putchar('-');
+			num = -num;
+		}
+
+		divisor = 1;
+		while (num / divisor >= 10)
+		{
+			divisor *= 10;
+		}
+
+		while (divisor > 0)
+		{
+			_putchar((num / divisor) % 10 + '0');
+			divisor /= 10;
+		}
+
+		if (n == 98)
+		{
+			break;
+		}
+
+		_putchar(',');
+		_putchar(' ');
+		n += step;
+	}
+
 	_putchar('\n');
 }
