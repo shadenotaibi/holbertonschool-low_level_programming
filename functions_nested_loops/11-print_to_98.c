@@ -8,23 +8,13 @@
  */
 void print_to_98(int n)
 {
-	int num;
-	int divisor;
-	int step;
+	int num, divisor, step;
 
-	if (n <= 98)
-	{
-		step = 1;
-	}
-	else
-	{
-		step = -1;
-	}
+	step = (n <= 98) ? 1 : -1;
 
 	while (1)
 	{
 		num = n;
-
 		if (num < 0)
 		{
 			_putchar('-');
@@ -33,9 +23,7 @@ void print_to_98(int n)
 
 		divisor = 1;
 		while (num / divisor >= 10)
-		{
 			divisor *= 10;
-		}
 
 		while (divisor > 0)
 		{
@@ -44,14 +32,11 @@ void print_to_98(int n)
 		}
 
 		if (n == 98)
-		{
 			break;
-		}
 
 		_putchar(',');
 		_putchar(' ');
 		n += step;
 	}
-
 	_putchar('\n');
 }
