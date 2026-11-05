@@ -39,4 +39,5 @@ int main(void)
 		num++;
 	}
 	_putchar('\n');
+	return (0);
 }
