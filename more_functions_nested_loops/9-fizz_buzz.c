@@ -1,14 +1,15 @@
-#include "main.h"
+
 #include <stdio.h>
 
 /**
- * print_square - prints a square
+ * main - prints the FizzBuzz sequence
  *
- * Return: void
+ * Return: 0 on success
  */
 int main(void)
 {
 	int num = 1;
+
 	while (num <= 100)
 	{
 		if (num % 3 == 0 && num % 5 == 0)
@@ -25,19 +26,16 @@ int main(void)
 		}
 		else
 		{
-			if (num > 9)
-			{
-    		_putchar(num / 10 + '0');
-    		_putchar(num % 10 + '0');
-			}
-			else
-			{
-			_putchar(num + '0');
-			}
+			printf("%d", num);
 		}
-		_putchar(' ');
+
+		if (num < 100)
+		{
+			printf(" ");
+		}
 		num++;
 	}
-	_putchar('\n');
+	printf("\n");
+
 	return (0);
 }
