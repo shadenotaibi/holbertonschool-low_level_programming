@@ -1,0 +1,1 @@
+this directory is for more examples for c programming
