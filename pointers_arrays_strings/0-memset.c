@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * reset_to_98 - changes the value to 98
- * @n: pointer to the integer
+ * _memset - fills memory with a constant byte
+ * @s: pointer to the memory area
+ * @b: constant byte
+ * @n: number of bytes to fill
  *
- * Return: void
+ * Return: pointer to the memory area s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
