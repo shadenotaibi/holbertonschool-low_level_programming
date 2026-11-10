@@ -2,11 +2,11 @@
 #include <stddef.h>
 
 /**
- * _strpbrk - searches a string for any byte in accept
- * @s: the string to search
- * @accept: the bytes to search for
+ * _strstr - locates a substring in a string
+ * @haystack: the string to search
+ * @needle: the substring to find
  *
- * Return: pointer to the first matching byte, or NULL
+ * Return: pointer to the beginning of the substring, or NULL
  */
 char *_strstr(char *haystack, char *needle)
 {
