@@ -11,6 +11,7 @@ int main(void)
 	int num1;
 	int num2;
 	int result;
+	int i;
 
 	while (choice != 0){
 
@@ -19,7 +20,12 @@ int main(void)
 		if (scanf("%d", &choice) != 1)
 		{
 			printf("Error: invalid input\n");
-			return (1);
+			i = getchar();
+			while (i != '\n' && i != EOF)
+			{
+				i = getchar();
+			}
+			continue;
 		}
 		if (choice == 0)
 		{
