@@ -18,10 +18,13 @@ int main(void)
 			printf("Error: invalid input\n");
 			return (1);
 		}
-		if (choice < 0 || choice > 4)
+		if (choice == 0)
 		{
-		printf("Error: invalid input\n");
-		return (1);
+			break;
+		}
+		if (choice < 1 || choice > 4)
+		{
+		printf("Invalid choice\n");
 		
 		}
 			else
