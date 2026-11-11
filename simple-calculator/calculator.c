@@ -8,6 +8,9 @@
 int main(void)
 {
 	int choice = 1;
+	int num1;
+	int num2;
+	int result;
 
 	while (choice != 0){
 
@@ -27,9 +30,48 @@ int main(void)
 		printf("Invalid choice\n");
 		
 		}
-			else
+		else if (choice == 1)
 		{
-			printf("choice: %d \n",choice);
+			printf("A: ");
+			scanf("%d", &num1);
+			printf("B: ");
+			scanf("%d", &num2);
+			result = num1 + num2;
+			printf("Result: %d", result);
+		}
+		else if (choice == 2)
+		{
+			printf("A: ");
+			scanf("%d", &num1);
+			printf("B: ");
+			scanf("%d", &num2);
+			result = num1 - num2;
+			printf("Result: %d", result);
+		}
+		else if (choice == 3)
+		{
+			printf("A: ");
+			scanf("%d", &num1);
+			printf("B: ");
+			scanf("%d", &num2);
+			result = num1 * num2;
+			printf("Result: %d", result);
+		}
+		else if (choice == 4)
+		{
+			printf("A: ");
+			scanf("%d", &num1);
+			printf("B: ");
+			scanf("%d", &num2);
+			if (num2 == 0)
+			{
+				printf("Error: division by zero\n");
+			}
+			else 
+			{
+			result = num1 / num2;
+			printf("Result: %d", result);
+			}
 		}
 	}
 
