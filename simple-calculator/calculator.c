@@ -7,39 +7,29 @@
  */
 int main(void)
 {
-	int choice;
-	int num1;
-	int num2;
-	int result;
+	int choice = 1;
 
-	printf("Simple Calculator \n1) add\n2) Subtract\n3) Multiply\n4) Divide\n0) Quit\n");
+	while (choice != 0){
 
-	if (scanf("%d", &choice) != 1)
-	{
+		printf("Simple Calculator \n1) Add\n2) Subtract\n3) Multiply\n4) Divide\n0) Quit\n");
+
+		if (scanf("%d", &choice) != 1)
+		{
+			printf("Error: invalid input\n");
+			return (1);
+		}
+		if (choice < 0 || choice > 4)
+		{
 		printf("Error: invalid input\n");
 		return (1);
+		
+		}
+			else
+		{
+			printf("choice: %d \n",choice);
+		}
 	}
 
-	if (scanf("%d \n %d",&num1 , &num2))
-	{
-		return (2);
-		printf("the result is : %d", result);
-	}
-
-	if (choice == 0)
-	{
-		printf("bye!");
-		return (0);
-	}
-
-	if (choice < 0 || choice > 4)
-	{
-		printf("Error: invalid input\n");
-		return (1);
-	}
-	else
-	{
-		printf("choice: %d \n",choice);
-	}
+	printf("Bye!");
 	return (0);
 }
