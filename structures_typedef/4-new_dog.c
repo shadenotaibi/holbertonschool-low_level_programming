@@ -1,7 +1,36 @@
 
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * copy_string - copies a string into allocated memory
+ * @str: string to copy
+ *
+ * Return: pointer to copied string, or NULL
+ */
+char *copy_string(char *str)
+{
+	char *copy;
+	unsigned int i;
+	unsigned int len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+
+	copy = malloc(sizeof(char) * (len + 1));
+	if (copy == NULL)
+		return (NULL);
+
+	i = 0;
+	while (i <= len)
+	{
+		copy[i] = str[i];
+		i++;
+	}
+
+	return (copy);
+}
 
 /**
  * new_dog - creates a new dog
@@ -13,52 +42,28 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    dog_t *dog;
-    char *dog_name;
-    char *dog_owner;
-    unsigned int i;
-    unsigned int name_len;
-    unsigned int owner_len;
+	dog_t *dog;
 
-    i = 0;
-    while (name[i] != '\0')
-        i++;
-    name_len = i + 1;
-    i = 0;
-    while (owner[i] != '\0')
-        i++;
-    owner_len = i + 1;
-    dog = malloc(sizeof(dog_t));
-    if (dog == NULL)
-        return (NULL);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
 
-    dog_name = malloc(sizeof(char) * name_len);
-    if (dog_name == NULL)
-    {
-        free(dog);
-        return (NULL);
-    }
-    dog_owner = malloc(sizeof(char) * owner_len);
-    if (dog_owner == NULL)
-    {
-        free(dog_name);
-        free(dog);
-        return (NULL);
-    }
-    i = 0;
-    while (i < name_len)
-    {
-        dog_name[i] = name[i];
-        i++;
-    }
-    i = 0;
-    while (i < owner_len)
-    {
-        dog_owner[i] = owner[i];
-        i++;
-    }
-    dog->name = dog_name;
-    dog->age = age;
-    dog->owner = dog_owner;
-    return (dog);
+	dog->name = copy_string(name);
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+
+	dog->owner = copy_string(owner);
+	if (dog->owner == NULL)
+	{
+		free(dog->name);
+		free(dog);
+		return (NULL);
+	}
+
+	dog->age = age;
+
+	return (dog);
 }
