@@ -1,5 +1,5 @@
+
 #include "dog.h"
-#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -13,32 +13,52 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
-	char *dog_name;
-	char *dog_owner;
-	dog = malloc(sizeof(dog_t));
-	
-	if (dog == NULL)
-	{
-		return (NULL);
-	}
-	dog_name = malloc(strlen(name) + 1);
-	if (dog_name == NULL)
-	{
-		free (dog);
-		return (NULL);
+    dog_t *dog;
+    char *dog_name;
+    char *dog_owner;
+    unsigned int i;
+    unsigned int name_len;
+    unsigned int owner_len;
 
-	}
-	strcpy(dog_name, name);
-	dog_owner = malloc(strlen(owner) + 1);
-	if (dog_owner == NULL)
-	{
-		free (dog);
-		return (NULL);
-	}
-	strcpy(dog_owner, owner);
-	dog->name = dog_name;
-	dog->age = age;
-	dog->owner = dog_owner;
-	return (dog);
+    i = 0;
+    while (name[i] != '\0')
+        i++;
+    name_len = i + 1;
+    i = 0;
+    while (owner[i] != '\0')
+        i++;
+    owner_len = i + 1;
+    dog = malloc(sizeof(dog_t));
+    if (dog == NULL)
+        return (NULL);
+
+    dog_name = malloc(sizeof(char) * name_len);
+    if (dog_name == NULL)
+    {
+        free(dog);
+        return (NULL);
+    }
+    dog_owner = malloc(sizeof(char) * owner_len);
+    if (dog_owner == NULL)
+    {
+        free(dog_name);
+        free(dog);
+        return (NULL);
+    }
+    i = 0;
+    while (i < name_len)
+    {
+        dog_name[i] = name[i];
+        i++;
+    }
+    i = 0;
+    while (i < owner_len)
+    {
+        dog_owner[i] = owner[i];
+        i++;
+    }
+    dog->name = dog_name;
+    dog->age = age;
+    dog->owner = dog_owner;
+    return (dog);
 }
