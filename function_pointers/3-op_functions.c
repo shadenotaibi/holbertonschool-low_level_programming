@@ -1,12 +1,6 @@
 #include "3-calc.h"
 
-/**
- * op_sub - subtracts two integers
- * @a: first integer
- * @b: second integer
- *
- * Return: difference between a and b
- */
+
 /**
  * op_add - adds two integers
  *
