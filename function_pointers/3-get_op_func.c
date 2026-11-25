@@ -3,10 +3,10 @@
 #include <stddef.h>
 
 /**
- * get_op_func - selects the correct function for an operator
- * @s: the operator passed as an argument
+ * get_op_func - selects the function for an operator
+ * @s: the operator symbol
  *
- * Return: pointer to the matching function, or NULL if not found
+ * Return: pointer to the matching function, or NULL
  */
 int (*get_op_func(char *s))(int, int)
 {
