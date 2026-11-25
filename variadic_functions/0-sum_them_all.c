@@ -1,5 +1,6 @@
-#include "function_pointers.h"
+#include "variadic_functions.h"
 #include <stddef.h>
+#include <stdarg.h>
 
 /**
  * array_iterator - executes a function on each array element
@@ -11,5 +12,5 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-    
+
 }
