@@ -7,8 +7,9 @@
  *
  * Return: difference between a and b
  */
- /**
+/**
  * op_add - adds two integers
+ *
  * @a: first integer
  * @b: second integer
  *
