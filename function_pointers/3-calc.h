@@ -3,7 +3,11 @@
 #define CALC_H
 
 #include <stddef.h>
-
+/**
+ * struct op - associates an operator with its function
+ * @op: the operator symbol
+ * @f: pointer to the operation function
+ */
 typedef struct op
 {
 	char *op;
