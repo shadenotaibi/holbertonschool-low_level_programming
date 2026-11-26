@@ -12,10 +12,10 @@
  */
 static void print_separator(int *printed)
 {
-    if (*printed > 0)
-        printf(", ");
+	if (*printed > 0)
+		printf(", ");
 
-    (*printed)++;
+	(*printed)++;
 }
 
 /**
@@ -26,48 +26,48 @@ static void print_separator(int *printed)
  */
 void print_all(const char * const format, ...)
 {
-    int i = 0;
-    int printed = 0;
-    char *current;
-    va_list a;
+	int i = 0;
+	int printed = 0;
+	char *current;
+	va_list a;
 
-    va_start(a, format);
+	va_start(a, format);
 
-    while (format != NULL && format[i] != '\0')
-    {
-        switch (format[i])
-        {
-            case 'c':
-                print_separator(&printed);
-                printf("%c", va_arg(a, int));
-                break;
+	while (format != NULL && format[i] != '\0')
+	{
+		switch (format[i])
+		{
+			case 'c':
+				print_separator(&printed);
+				printf("%c", va_arg(a, int));
+				break;
 
-            case 'i':
-                print_separator(&printed);
-                printf("%d", va_arg(a, int));
-                break;
+			case 'i':
+				print_separator(&printed);
+				printf("%d", va_arg(a, int));
+				break;
 
-            case 'f':
-                print_separator(&printed);
-                printf("%f", va_arg(a, double));
-                break;
+			case 'f':
+				print_separator(&printed);
+				printf("%f", va_arg(a, double));
+				break;
 
-            case 's':
-                current = va_arg(a, char *);
-                if (current == NULL)
-                    current = "(nil)";
+			case 's':
+				current = va_arg(a, char *);
+				if (current == NULL)
+					current = "(nil)";
 
-                print_separator(&printed);
-                printf("%s", current);
-                break;
+				print_separator(&printed);
+				printf("%s", current);
+				break;
 
-            default:
-                break;
-        }
+			default:
+				break;
+		}
 
-        i++;
-    }
+		i++;
+	}
 
-    va_end(a);
-    printf("\n");
+	va_end(a);
+	printf("\n");
 }
