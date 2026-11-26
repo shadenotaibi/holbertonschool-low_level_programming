@@ -32,6 +32,12 @@ void print_all(const char * const format, ...)
 	va_list a;
 
 	va_start(a, format);
+	if (format == NULL)
+	{
+    	va_end(a);
+    	printf("\n");
+    	return;
+	}
 
 	while (format[i] != '\0')
 	{
