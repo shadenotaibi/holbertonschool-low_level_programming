@@ -22,6 +22,7 @@ static void print_separator(int *printed)
  * print_value - prints a value according to its type
  * @a: pointer to the variadic argument list
  * @type: type of the value to print
+ * @printed: pointer to the number of printed values
  *
  * Return: Nothing
  */
