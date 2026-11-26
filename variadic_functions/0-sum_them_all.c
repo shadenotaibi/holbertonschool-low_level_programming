@@ -3,14 +3,26 @@
 #include <stdarg.h>
 
 /**
- * array_iterator - executes a function on each array element
- * @array: the array to iterate over
- * @size: the size of the array
- * @action: the function to execute
+ * sum_them_all - returns the sum of all its parameters
+ * @n: the number of arguments
  *
- * Return: Nothing
+ * Return: the sum of all arguments
  */
 int sum_them_all(const unsigned int n, ...)
 {
+	unsigned int i;
+	int result = 0;
+	va_list a;
 
+	if (n == 0)
+	{
+		return (0);
+	}
+	va_start(a, n);
+	for (i = 0; i < n; i++)
+	{
+		result = result + va_arg(a, int);
+	}
+	va_end(a);
+	return (result);
 }
